@@ -1,0 +1,15 @@
+zone "halim.local" IN {
+  type master;
+  file "/etc/bind/forward.halim.local.db";
+  allow-update { none; }; 
+};
+
+zone "100.168.192.in-addr.arpa" IN { //Reverse lookup name, should match your network in reverse order
+
+     type master; // Primary DNS
+
+     file "/etc/bind/reverse.halim.local.db"; //Reverse lookup file
+
+     allow-update { none; }; //Since this is the primary DNS, it should be none.
+
+};

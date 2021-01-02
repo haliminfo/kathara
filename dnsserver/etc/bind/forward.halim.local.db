@@ -1,0 +1,35 @@
+;
+; BIND data file for local loopback interface
+;
+$TTL    604800
+@       IN      SOA     dnsserver.halim.local. root.halim.local. (
+                              2         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+; Commentout below three lines
+;@      IN      NS      localhost.
+;@      IN      A       127.0.0.1
+;@      IN      AAAA    ::1
+
+;Name Server Information
+
+@       IN      NS      dnsserver.halim.local.
+
+;IP address of Name Server
+
+dnsnameserver     IN      A       192.168.100.100
+
+;Web Server
+
+staticwebserver IN     A  10.20.30.100
+
+;HaProxy
+
+haproxy         IN     A   172.16.0.100
+
+:Client
+
+client           IN   A    192.168.0.1

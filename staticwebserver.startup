@@ -1,6 +1,8 @@
 ip link set dev eth0 up
-ip a add 10.20.30.100 dev eth0
+ip a add 10.20.30.100/24 dev eth0
 ip r add default via 10.20.30.254
 
-ip route add 192.168.0.0/24 via 10.20.30.10 dev eth0
-ip route add 172.16.0.0/24 via 10.20.30.254 dev eth0
+ip route add 192.168.0.0/24 via 10.20.30.10
+ip route add 172.16.0.0/24 via 10.20.30.254
+
+/etc/init.d/apache2 restart
