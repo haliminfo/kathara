@@ -1,0 +1,17 @@
+$TTL 86400
+
+@ IN SOA kathara.local root.kathara.local (
+  2017062705
+  3600
+  900
+  604800
+  86400
+)
+
+@      IN NS dnsserver
+dnsserver IN A  192.168.100.100
+client IN A  192.168.0.1
+javawebserver IN A 172.16.0.100
+staticwebserver IN A 10.20.30.100
+
+

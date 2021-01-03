@@ -3,5 +3,9 @@ ip a add 192.168.100.100/24 dev eth0
 ip r add default via 192.168.100.254
 
 
-/etc/init.d/bind9 start
+
+named-checkconf
+/usr/sbin/named-checkzone kathara.local /var/cache/bind/kathara.local.zone
+/etc/init.d/dbus start
+/etc/init.d/bind9 restart
 
